@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
+    "babel-loader": "^6.2.7",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-lodash": "^3.2.5",
     "babel-plugin-transform-proto-to-assign": "^6.9.0",
@@ -42,12 +43,16 @@
     "react": "^15.0.0-rc.1",
     "react-addons-shallow-compare": "^15.0.0-rc.1",
     "react-addons-test-utils": "^15.0.0-rc.1",
-    "react-dom": "^15.0.0-rc.1"
+    "react-dom": "^15.0.0-rc.1",
+    "webpack": "^1.13.3"
   },
   "scripts": {
     "lint": "eslint ./src ./tests",
+    "lint:fix": "eslint --fix ./src ./tests",
     "test": "mocha --compilers js:babel-register ./tests/**/*.js",
     "build": "babel ./src --out-dir ./dist",
+    "build:bundle": "webpack",
+    "build:bundle:prod": "webpack -p",
     "precommit": "npm run lint && npm run test"
   }
 }

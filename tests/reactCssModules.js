@@ -138,7 +138,7 @@ describe('reactCssModules', () => {
     });
   });
   context('rendering element', () => {
-    beforeEach(() => {
+    beforeEach(() => { // eslint-disable-line
       global.document = jsdom.jsdom('<!DOCTYPE html><html><head></head><body></body></html>');
 
       global.window = document.defaultView;
